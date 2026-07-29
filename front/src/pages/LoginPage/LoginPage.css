@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.92) 0 34%, rgba(247, 244, 235, 0.86) 56%, rgba(124, 148, 111, 0.5) 100%),
+        linear-gradient(135deg, #d8dfce 0%, #fbf8ef 46%, #d3dbc9 100%);
+    color: #214326;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+}
+
+.page-header {
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #244927;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.login-page {
+    position: relative;
+    width: min(1120px, calc(100% - 48px));
+    min-height: 540px;
+    margin: 0 auto 32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 24px 50px rgba(53, 63, 45, 0.18);
+}
+
+.login-page::before {
+    content: "";
+    width: 38%;
+    min-width: 360px;
+    display: block;
+    background:
+        linear-gradient(180deg, rgba(255, 252, 245, 0.72), rgba(239, 229, 210, 0.6)),
+        url("https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80");
+    background-size: cover;
+    background-position: 38% center;
+}
+
+.login-container {
+    width: 62%;
+    max-width: none;
+    padding: 56px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.login-container h2 {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 0 32px;
+    color: #17451f;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+
+#login-form {
+    width: 100%;
+    max-width: 440px;
+    text-align: left;
+}
+
+#login-form label {
+    display: block;
+    margin: 0 0 10px;
+    color: #244927;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#login-form input {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #263526;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#login-form input:focus {
+    border-color: #7e986f;
+    box-shadow: 0 0 0 3px rgba(126, 152, 111, 0.16);
+}
+
+#login-form input::placeholder {
+    color: #b7b7b7;
+}
+
+.helper-text {
+    min-height: 18px;
+    margin: 0 0 16px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#loginBtn {
+    width: 100%;
+    height: 48px;
+    margin: 10px 0 24px;
+    border: none;
+    border-radius: 7px;
+    background-color: #1f4b22;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.16);
+}
+
+#loginBtn:disabled {
+    background-color: #8fa58a;
+    cursor: default;
+}
+
+.signup-link {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    display: block;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    color: #244927;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        width: min(520px, calc(100% - 32px));
+        min-height: 0;
+        display: block;
+    }
+
+    .login-page::before {
+        width: 100%;
+        min-width: 0;
+        height: 210px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: none;
+        padding: 42px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        height: 84px;
+    }
+
+    .page-header h1 {
+        font-size: 34px;
+    }
+
+    .login-page {
+        margin-bottom: 32px;
+    }
+
+    .login-container {
+        padding: 34px 24px;
+    }
+
+    .login-container h2 {
+        margin-bottom: 28px;
+        font-size: 32px;
+    }
+
+    #login-form input,
+    #loginBtn {
+        height: 46px;
+    }
+}

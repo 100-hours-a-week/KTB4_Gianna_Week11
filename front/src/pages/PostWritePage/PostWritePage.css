@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(0deg, rgba(28, 73, 34, 0.96) 0%, rgba(76, 111, 78, 0.72) 28%, rgba(247, 244, 235, 0.95) 72%, rgba(255, 255, 255, 0.98) 100%),
+        radial-gradient(circle at 68% 16%, rgba(255, 255, 255, 0.95) 0 24%, rgba(226, 231, 217, 0.76) 54%, rgba(31, 75, 34, 0.7) 100%);
+    color: #244927;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+}
+
+#headerContainer .main-header {
+    height: 92px;
+    max-width: calc(100% - 96px);
+    margin: 0 auto;
+    justify-content: flex-start;
+    border-bottom: none;
+    background-color: transparent;
+    color: #244927;
+}
+
+#headerContainer #headerTitle {
+    margin: 0;
+    color: #244927;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0;
+    font-weight: 400;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.18);
+}
+
+#headerContainer #headerTitle::before {
+    content: "Raffiné";
+    font-size: 38px;
+}
+
+#headerContainer .back-btn {
+    display: none;
+}
+
+#headerContainer .profile-toggle-btn {
+    left: auto;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background-color: #e7e3da;
+}
+
+#headerContainer .profile-toggle-btn::after {
+    content: "⌄";
+    position: fixed;
+    top: 45px;
+    right: 54px;
+    color: #1f2d1f;
+    font-size: 22px;
+    line-height: 1;
+}
+
+#headerContainer .mypage-toggle-container {
+    left: auto;
+    right: 0;
+    top: 72px;
+    border: 1px solid rgba(36, 73, 39, 0.12);
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 28px rgba(53, 63, 45, 0.16);
+}
+
+.post-write-page {
+    position: relative;
+    width: min(1210px, calc(100% - 96px));
+    min-height: 720px;
+    margin: 18px auto 48px;
+    padding: 58px 420px 54px 34px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 50px rgba(27, 52, 30, 0.22);
+}
+
+.post-write-page::before,
+.post-write-page::after {
+    position: absolute;
+    right: 0;
+    width: 380px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 40px rgba(53, 63, 45, 0.12);
+}
+
+.post-write-page::after {
+    content: "━━━━━━━━━━✦  글쓰기 가이드  ✦━━━━━━━━━━\A\A 1.  솔직한 경험을 적어보세요.\A    가장 날 것의 표현은 미래의 나에게 큰 힘이 됩니다.\A\A 2.  구체적으로 표현해보세요.\A    어떤 상황이었는지, 어떤 감정을 느꼈는지 자세히 적어보세요.\A\A 3.  나만의 시선으로 기록해보세요.\A    당신만의 관점이 특별한 가치를 만듭니다.\A";
+    bottom: 0;
+    min-height: 682px;
+    padding: 34px 34px;
+    color: #244927;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.85;
+    white-space: pre;
+}
+
+#postWriteTitle {
+    margin: 0 0 18px;
+    color: #17451f;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+}
+
+#postWriteTitle::after {
+    content: " ✎";
+    color: #d49a34;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.post-write-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 46px 0 0;
+}
+
+.post-write-container::before {
+    content: "좋아하는 것들, 보고 느낀 것들을 기록하며 나를 단단하게 만들어가는 과정";
+    position: absolute;
+    top: 112px;
+    left: 34px;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.post-write-container label {
+    display: block;
+    margin: 0 0 14px;
+    color: #244927;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#postTitle,
+#postContent {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfd5ce;
+    background-color: transparent;
+    color: #2b2a25;
+    font-size: 15px;
+    outline: none;
+}
+
+#postTitle {
+    height: 44px;
+    padding: 0 0 0 2px;
+    margin-bottom: 42px;
+}
+
+#postContent {
+    height: 142px;
+    padding: 16px 0 0 2px;
+    resize: none;
+}
+
+#postTitle::placeholder,
+#postContent::placeholder {
+    color: #8a8a8a;
+    font-weight: 500;
+}
+
+.helper-text {
+    min-height: 20px;
+    margin: 10px 0 24px;
+    color: #bf6f00;
+    font-size: 12px;
+}
+
+#postUploadedPicture {
+    width: 100%;
+    height: 78px;
+    display: block;
+    margin-top: 8px;
+    padding: 27px 24px;
+    border: 1px solid #cfd5ce;
+    border-radius: 6px;
+    color: #555555;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#postWriteBtn {
+    width: 250px;
+    height: 48px;
+    display: block;
+    margin: 38px 0 0 450px;
+    border: none;
+    border-radius: 7px;
+    background-color: #1f4b22;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.16);
+}
+
+#postWriteBtn:disabled {
+    background-color: #8fa58a;
+    cursor: default;
+}
+
+@media (max-width: 1080px) {
+    #headerContainer .main-header,
+    .post-write-page {
+        width: calc(100% - 48px);
+        max-width: none;
+    }
+
+    .post-write-page {
+        padding-right: 34px;
+    }
+
+    .post-write-page::before,
+    .post-write-page::after {
+        display: none;
+    }
+
+    .post-write-container {
+        max-width: none;
+    }
+}
+
+@media (max-width: 520px) {
+    #headerContainer .main-header,
+    .post-write-page {
+        width: calc(100% - 32px);
+    }
+
+    #headerContainer .main-header {
+        height: 78px;
+    }
+
+    #headerContainer #headerTitle::before {
+        font-size: 30px;
+    }
+
+    #headerContainer .profile-toggle-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    #headerContainer .profile-toggle-btn::after {
+        display: none;
+    }
+
+    .post-write-page {
+        min-height: 0;
+        margin-top: 10px;
+        padding: 34px 22px;
+    }
+
+    #postWriteTitle {
+        font-size: 30px;
+    }
+
+    .post-write-container::before {
+        left: 22px;
+        right: 22px;
+        top: 84px;
+        line-height: 1.5;
+    }
+
+    .post-write-container {
+        margin-top: 58px;
+    }
+
+    #postWriteBtn {
+        width: 100%;
+        max-width: none;
+        margin-left: 50px
+    }
+}

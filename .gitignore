@@ -1,1 +1,8 @@
 .DS_Store
+
+front/node_modules/
+front/dist/
+
+back/build/
+back/.gradle/
+back/.idea/
