@@ -1,14 +1,15 @@
-import { getUserId } from "../../../module/module";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { requestCsrfAPIJsonResponse } from "../../../api/csrf";
 export const PostEditSubmit = ({isPostEnable, title, content, file}) =>{
     const navigate = useNavigate();
+    const postId = useParams?.postId;
 
     async function handleSubmitPost(){
         const csrf = await requestCsrfAPIJsonResponse();
-        const userId = await getUserId();
+        
         try{
-            const response = await fetch(`/posts/${userId}`, {
+            const response = await fetch(`/posts/${postId}`, {
                 method: 'PATCH',
                 credentials:"include",
                 headers: {
