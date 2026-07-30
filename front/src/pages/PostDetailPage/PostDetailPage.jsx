@@ -7,7 +7,6 @@ import { PostDetail } from './component/PostContent';
 import { PostHeader } from './component/PostHeader';
 import { CommentForm } from './component/CommentForm';
 import { Header } from '../../components/Header/Header';
-import { getUserId } from '../../module/module';
 export const PostDetailPage = () =>{
     const [post, setPost] = useState(null);
     const [user, setUser] = useState(null);
