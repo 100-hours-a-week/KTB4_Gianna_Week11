@@ -15,8 +15,8 @@ export const PostDetailPage = () =>{
     let isAuthor; 
 
     async function checkIsAuthor(){
-        const userIdCookie = await cookieStore.get('userId');
-        return post.userId === userIdCookie.value;
+        const userId = await getUserId();
+        return post.userId === userId;
         
     }
     useEffect( ()=>{
