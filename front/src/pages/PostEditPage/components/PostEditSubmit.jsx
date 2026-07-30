@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { requestCsrfAPIJsonResponse } from "../../../api/csrf";
 export const PostEditSubmit = ({isPostEnable, title, content, file}) =>{
     const navigate = useNavigate();
-    const postId = useParams?.postId;
+    const postId = useParams()?.postId;
 
     async function handleSubmitPost(){
         const csrf = await requestCsrfAPIJsonResponse();
