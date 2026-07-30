@@ -6,7 +6,6 @@ import { requestCsrfAPIJsonResponse } from '../../api/csrf';
 import { PostDetail } from './component/PostContent';
 import { PostHeader } from './component/PostHeader';
 import { CommentForm } from './component/CommentForm';
-import { CommentList } from './component/CommentList';
 import { Header } from '../../components/Header/Header';
 export const PostDetailPage = () =>{
     const [post, setPost] = useState(null);
@@ -74,7 +73,6 @@ export const PostDetailPage = () =>{
 
                 <section id="commentListContainer" className="comment-list-container">
                     {<CommentForm/>}
-                    {<CommentList postId={postId}/>}
                 </section>
             </main>
         </>       
