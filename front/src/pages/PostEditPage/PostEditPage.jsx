@@ -14,7 +14,7 @@ export const PostEditPage = ()=>{
         async function handleGetPost() {
             const csrf = await requestCsrfAPIJsonResponse();
             try{
-                const response = await fetch(`http://localhost:8080/posts/${postId}`, {
+                const response = await fetch(`/posts/${postId}`, {
                     method: 'GET',
                     credentials:"include",
                     headers: {

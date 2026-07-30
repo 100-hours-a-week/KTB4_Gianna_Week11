@@ -35,7 +35,7 @@ export const CommentSubmit = ({commentValue, isEdit, setIsEdit, commentId, setEd
         const csrf = await requestCsrfAPIJsonResponse();
 
         try{
-        const response = await fetch(`http://localhost:8080/posts/${postId}/comments/${commentId}`, {
+        const response = await fetch(`/posts/${postId}/comments/${commentId}`, {
             method: 'PATCH',
             credentials:"include",
             headers: {
