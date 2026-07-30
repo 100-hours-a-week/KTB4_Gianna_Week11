@@ -1,7 +1,8 @@
 import { requestCsrfAPIJsonResponse } from "../../../api/csrf";
-import { getPostIdFromURL, getUserId  } from "../../../module/module";
+import { getUserId  } from "../../../module/module";
+import { useParams } from "react-router-dom";
 export const CommentSubmit = ({commentValue}) =>{
-    const postId = getPostIdFromURL();
+    const postId = useParams()?.postId;
 
     async function handleCommentSubmit(){
         const csrf = await requestCsrfAPIJsonResponse();

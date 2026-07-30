@@ -1,15 +1,16 @@
 import { PostEditForm } from "./components/PostEditForm"
 import { PostEditSubmit } from "./components/PostEditSubmit"
 import { useState, useEffect } from "react"
-import { getPostIdFromURL } from "../../module/module"
+import { useParams } from "react-router-dom"
 import { requestCsrfAPIJsonResponse } from "../../api/csrf"
 export const PostEditPage = ()=>{
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [file, setFile] = useState("");
-
+    const postId = useParams()?.postId;
+    
     useEffect(()=>{
-        const postId = getPostIdFromURL();
+
         async function handleGetPost() {
             const csrf = await requestCsrfAPIJsonResponse();
             try{

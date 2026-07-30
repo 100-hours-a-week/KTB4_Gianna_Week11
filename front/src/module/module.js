@@ -1,8 +1,3 @@
-export const getPostIdFromURL = () =>{
-    const params = window.location.pathname;
-    const match = params.match(/^\/posts\/(\d+)$/);
-    return match[1];
-}
 
 export const getUserId = () =>{
     const documentCookies = document.cookie.split(';');

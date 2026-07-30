@@ -1,6 +1,7 @@
 import './PostDetailPage.css';
-import { getPostIdFromURL, getUserId, getUser } from '../../module/module';
-import { useState, useEffect, useId } from 'react';
+import { getUserId, getUser } from '../../module/module';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { requestCsrfAPIJsonResponse } from '../../api/csrf';
 import { PostDetail } from './component/PostContent';
 import { PostHeader } from './component/PostHeader';
@@ -10,7 +11,7 @@ import { Header } from '../../components/Header/Header';
 export const PostDetailPage = () =>{
     const [post, setPost] = useState(null);
     const [user, setUser] = useState(null);
-    const postId = getPostIdFromURL();
+    const postId = useParams()?.postId;
 
     let isAuthor = () => async function checkIsAuthor(){
         const userIdCookie = await cookieStore.get('userId');
