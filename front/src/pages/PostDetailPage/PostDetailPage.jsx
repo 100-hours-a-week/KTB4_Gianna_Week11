@@ -11,8 +11,9 @@ export const PostDetailPage = () =>{
     const [post, setPost] = useState(null);
     const [user, setUser] = useState(null);
     const postId = useParams()?.postId;
+    let isAuthor; 
 
-    let isAuthor = () => async function checkIsAuthor(){
+    async function checkIsAuthor(){
         const userIdCookie = await cookieStore.get('userId');
         return post.userId === userIdCookie.value;
     }
@@ -39,7 +40,7 @@ export const PostDetailPage = () =>{
                 }
                 setPost(data.data)
                 setUser(getUserResponse)
-
+                isAuthor = await checkIsAuthor();
         }catch(error){
             console.error('boardView 오류 발생:', error);
         }   
