@@ -15,7 +15,7 @@ export const PostItem = ({ post, index }) => {
     const navigate = useNavigate();
 
     function handleClick() {
-        navigate(`/posts/${post.id}`);
+        navigate(`/post/${post.id}`);
     }
 
     function getPostImage(post, index) {

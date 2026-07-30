@@ -19,8 +19,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/signup" element={<SignupPage/>}/>
         <Route path="/board" element={<BoardPage/>}/>
         <Route path="/posts/write" element={<PostWritePage/>}/>
-        <Route path="/posts/:postId" element={<PostDetailPage/>}/>
-        <Route path="/posts/:postId/edit" element={<PostEditPage/>}/>       
+        <Route path="/post/:postId" element={<PostDetailPage/>}/>
+        <Route path="/post/:postId/edit" element={<PostEditPage/>}/>       
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/mypage/password" element={<ChangePasswordPage/>}/>
       </Routes>
