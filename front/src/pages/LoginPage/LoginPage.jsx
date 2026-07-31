@@ -8,31 +8,30 @@ export const LoginPage = ()=>{
     const [password, setPassword] = useState(null);
     const [emailHelperText, setEmailHelperText] = useState(null);
     const [pwdHelperText, setPwdHelperText] = useState(null);
-    const [isLoginEnabled, setIsLoginEnabled] = useState(false);
     
     function handleEmailChange(input){
         const helperText = emailHelperTextMaker(input);
         setEmail(input);
         setEmailHelperText(helperText);
-        checkLoginStatus(helperText, pwdHelperText);
     }
 
     function handlePwdChange(input){
         const helperText = pwdHelperTextMaker(input);
         setPwdHelperText(helperText);
         setPassword(input);
-        checkLoginStatus(emailHelperText, helperText);
     }
 
-    function checkLoginStatus(emailHT, pwdHT){
-        if(email && emailHT.length === 0
-            && password && pwdHT.length === 0
+    function checkLoginStatus(){
+        if(email && emailHelperText.length === 0
+            && password && pwdHelperText.length === 0
         ){
-            setIsLoginEnabled(true);
+            return true;
         } else{
-            setIsLoginEnabled(false);
+            return false;
         }
     }
+    
+    const isLoginEnabled = checkLoginStatus();
 
     return (
         <div>
