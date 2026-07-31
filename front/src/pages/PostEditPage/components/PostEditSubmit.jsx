@@ -20,7 +20,7 @@ export const PostEditSubmit = ({isPostEnable, title, content, file}) =>{
                 body: JSON.stringify({
                     title : title,
                     content : content,
-                    file : file.length ===0 ? null : pictureInput.value
+                    file : file 
                 })
             });
         
