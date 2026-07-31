@@ -11,12 +11,11 @@ export const PostDetailPage = () =>{
     const [post, setPost] = useState(null);
     const [user, setUser] = useState(null);
     const postId = useParams()?.postId;
-    let isAuthor; 
 
-    async function checkIsAuthor(){
-        const userId = await getUserId();
+
+    function checkIsAuthor(){
+        const userId = getUserId();
         return post.userId === userId;
-        
     }
     useEffect( ()=>{
         async function getPost() {
@@ -35,13 +34,15 @@ export const PostDetailPage = () =>{
                 }
 
                 const data = await response.json();
+                console.log(data.data.userId)
                 const getUserResponse = await getUser(data.data.userId)
                 if(getUserResponse.status === 403){
-                    
                 }
                 setPost(data.data)
                 setUser(getUserResponse)
-                isAuthor = await checkIsAuthor();
+                
+                //const postUserId = data.data.userId
+                
         }catch(error){
             console.error('boardView 오류 발생:', error);
         }   
@@ -53,6 +54,8 @@ export const PostDetailPage = () =>{
         return <p>로딩중...</p>;
     }
 
+    const isAuthor = checkIsAuthor();
+    
     return (
         <>
             <div id="headerContainer">{<Header/>}</div>
