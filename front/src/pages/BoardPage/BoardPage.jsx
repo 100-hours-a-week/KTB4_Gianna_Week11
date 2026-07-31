@@ -44,11 +44,10 @@ export const BoardPage = () =>{
                 </section>
                 
                 <section id="post-list-container" className="post-list-container">
-                    {postItems.map((post, idx)=>{
+                    {postItems.map((post)=>{
                         return <PostItem
                         key={post.id}
                         post={post}
-                        index={idx}
                         />
                 })}</section>
             </main> 

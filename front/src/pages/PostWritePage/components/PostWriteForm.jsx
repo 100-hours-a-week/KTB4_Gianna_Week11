@@ -9,7 +9,7 @@ export const PostWriteForm = ({onTitleChange, onContentChange, onFileChange}) =>
             <p id="helperText" className="helper-text"></p>
 
             <label htmlFor="postUploadedPicture">이미지</label>
-            <input id="postUploadedPicture" type="file" accept="image/png, image/jpeg" onChange={(event)=>{onFileChange(event.target.files[0])}}></input>
+            <input id="postUploadedPicture" type="file" accept="image/png, image/jpeg" onChange={(event)=>{onFileChange(event.target.files[0].name)}}></input>
         </div>
     )
 }

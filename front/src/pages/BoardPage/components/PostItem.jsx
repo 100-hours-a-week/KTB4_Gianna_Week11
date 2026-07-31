@@ -2,41 +2,27 @@ import { useNavigate } from "react-router-dom";
 import { formalizeDate } from "../../../module/module";
 
 const defaultCategory = "카테고리";
-const defaultPostImages = [
-    "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1458560871784-56d23406c091?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1526243741027-444d633d7365?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1495195134817-aeb325a55b65?auto=format&fit=crop&w=700&q=80",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80",
-];
 
-export const PostItem = ({ post, index }) => {
+export const PostItem = ({ post }) => {
     const navigate = useNavigate();
 
     function handleClick() {
         navigate(`/post/${post.id}`);
     }
 
-    function getPostImage(post, index) {
-        if (post.file) {
-            return post.file;
-        }
-        return defaultPostImages[index % defaultPostImages.length];
-    }
-
+    console.log(post)
     return (
         <article className="post-card" onClick={handleClick} post={post}>
             <div
                 className="post-card-image"
                 style={{
-                    backgroundImage: `url("${getPostImage(post, index)}")`,
+                    backgroundImage: `url("${post.file}")`,
                 }}
             />
 
             <div className="post-card-main">
                 <h3 className="post-card-title">
-                    {post.title || "제목 없는 기록"}
+                    {post.title }
                 </h3>
 
                 <div className="post-card-meta">
