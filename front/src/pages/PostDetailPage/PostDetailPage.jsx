@@ -34,7 +34,7 @@ export const PostDetailPage = () =>{
                 }
 
                 const data = await response.json();
-                console.log(data.data.userId)
+                //console.log(data.data.userId)
                 const getUserResponse = await getUser(data.data.userId)
                 if(getUserResponse.status === 403){
                 }
