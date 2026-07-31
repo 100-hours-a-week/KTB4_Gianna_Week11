@@ -13,8 +13,7 @@ export const getUserId = () =>{
 
 import { requestCsrfAPIJsonResponse } from "../api/csrf.js";
 export const getUser = async(userId) =>{
-const csrf = await requestCsrfAPIJsonResponse();
-
+    const csrf = await requestCsrfAPIJsonResponse();
     try{
         const response = await fetch(`/users/${userId}`, {
             method: 'GET',

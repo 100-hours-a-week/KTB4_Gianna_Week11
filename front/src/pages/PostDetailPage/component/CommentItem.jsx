@@ -1,10 +1,16 @@
 import { getUserId, formalizeDate } from "../../../module/module";
 import { requestCsrfAPIJsonResponse } from "../../../api/csrf";
 export const CommentItem = ({comment, setComment, onEdit, setEditCommentId}) =>{
+    function checkIsAuthor () {
+        const userId = getUserId();
+        return userId === Number(comment.userId)
+    }
+    
     const handleDelete = async () => {
         const confirmed = window.confirm("댓글을 삭제하시겠습니까?");
         const csrf = await requestCsrfAPIJsonResponse();
 
+        
         if (!confirmed) {
             return;
         } else if(confirmed){
@@ -28,12 +34,7 @@ export const CommentItem = ({comment, setComment, onEdit, setEditCommentId}) =>{
         }
     };
 
-    const isAuthor = async () =>{
-        const userId = await getUserId();
-        return Number(userId) === Number(comment.userId)
-    }
-
-
+    const isAuthor = checkIsAuthor();
 
     return (
         <article className="comment-item">
