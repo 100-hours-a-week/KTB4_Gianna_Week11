@@ -6,7 +6,7 @@ import { requestCsrfAPIJsonResponse } from "../../api/csrf"
 export const PostEditPage = ()=>{
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [file, setFile] = useState("");
+    const [file, setFile] = useState(null);
     const postId = useParams()?.postId;
     
     useEffect(()=>{
@@ -54,7 +54,7 @@ export const PostEditPage = ()=>{
                     isPostEnable={isPostEnable}
                     title={title} 
                     content={content} 
-                    file = {file}/>}
+                 />}
             </main>
         </>
     )

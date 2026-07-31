@@ -1,4 +1,4 @@
-export const PostEditForm = ({title="", content="", file="", onTitleChange, onContentChange, onFileChange}) =>{
+export const PostEditForm = ({title="", content="", onTitleChange, onContentChange, onFileChange}) =>{
     return (
         <div className="post-write-container">
             <label htmlFor="postTitle">제목*</label>
@@ -9,7 +9,7 @@ export const PostEditForm = ({title="", content="", file="", onTitleChange, onCo
             <p id="helperText" className="helper-text"></p>
 
             <label htmlFor="postUploadedPicture">이미지</label>
-            <input id="postUploadedPicture" type="file" accept="image/png, image/jpeg" value={file} onChange={(event)=>{onFileChange(event.target.files[0])}}></input>
+            <input id="postUploadedPicture" type="file" accept="image/png, image/jpeg" onChange={(event)=>{onFileChange(event.target.files[0] ?? null)}}></input>
         </div>
     )
 }
