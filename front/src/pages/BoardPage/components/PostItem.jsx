@@ -10,7 +10,6 @@ export const PostItem = ({ post }) => {
         navigate(`/post/${post.id}`);
     }
 
-    console.log(post)
     return (
         <article className="post-card" onClick={handleClick} post={post}>
             <div
